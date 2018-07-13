@@ -1,4 +1,4 @@
-import { ADD_PLACE, DELETE_PLACE, DESELECT_PLACE, SELECT_PLACE } from "../actions/actionTypes";
+import { ADD_PLACE, DELETE_PLACE } from "../actions/actionTypes";
 
 
 const initialState = {
@@ -18,7 +18,6 @@ const initialState = {
             }
         }
     ],
-    selectedPlace: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,30 +27,19 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 places: state.places.concat({
                         key: new Date().getTime().toString(),
-                        name: action.payload,
+                        name: action.placeName,
                         image: {
                             uri: "https://www.stylecraze.com/wp-content/uploads/2013/06/1752-Top-10-Most-Beautiful-Yellow-Roses-is.jpg"
-                        }
+                        },
+                        location: action.location
                     })
             };
         case DELETE_PLACE:
             return {
                 ...state,
                 places: state.places.filter(el => {
-                    return el.key !== state.selectedPlace.key;
+                    return el.key !== action.payload;
                 }),
-                selectedPlace: null
-            };
-        case SELECT_PLACE:
-            return {
-                ...state,
-                selectedPlace: state.places.find(place => {
-                    return place.key === action.payload;
-                })
-            };
-        case DESELECT_PLACE:
-            return {
-                ...state,
                 selectedPlace: null
             };
         default:

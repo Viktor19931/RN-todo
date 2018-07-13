@@ -1,1 +1,2 @@
-export { addPlace, deletePlace, deselectPlace, selectPlace } from './places';
+export { addPlace, deletePlace } from './places';
+export { tryAuth } from './auth';
