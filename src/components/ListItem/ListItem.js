@@ -1,31 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, TouchableNativeFeedback, Platform, Image} from 'react-native';
 
-const ListItem = ({ onItemPressed, placeImage, placeName }) => {
-    if (Platform.OS === "android") {
+class ListItem extends Component {
+    render(){
+    const { onItemPressed, placeImage, placeName } = this.props;
+        if (Platform.OS === "android") {
+            return (
+                <TouchableNativeFeedback onPress={onItemPressed}>
+                    <View style={styles.container}>
+                        <Image
+                            source={placeImage}
+                            style={styles.placeImageStyle}/>
+                        <Text>{placeName}</Text>
+                    </View>
+                </TouchableNativeFeedback>
+            );
+        }
         return (
-            <TouchableNativeFeedback onPress={onItemPressed}>
+            <TouchableOpacity onPress={onItemPressed}>
                 <View style={styles.container}>
                     <Image
                         source={placeImage}
                         style={styles.placeImageStyle}/>
                     <Text>{placeName}</Text>
                 </View>
-            </TouchableNativeFeedback>
+            </TouchableOpacity>
         );
     }
-
-    return (
-        <TouchableOpacity onPress={onItemPressed}>
-            <View style={styles.container}>
-                <Image
-                    source={placeImage}
-                    style={styles.placeImageStyle}/>
-                <Text>{placeName}</Text>
-            </View>
-        </TouchableOpacity>
-    );
-
 };
 
 const styles = StyleSheet.create({
