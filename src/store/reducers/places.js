@@ -1,4 +1,4 @@
-import { ADD_PLACE, DELETE_PLACE } from "../actions/actionTypes";
+import {SET_PLACES, REMOVE_PLACE, ADD_PLACE} from "../actions/actionTypes";
 
 
 const initialState = {
@@ -8,6 +8,10 @@ const initialState = {
             name: 'First Item',
             image: {
                 uri: "https://www.stylecraze.com/wp-content/uploads/2013/06/1752-Top-10-Most-Beautiful-Yellow-Roses-is.jpg"
+            },
+            location: {
+                latitude: 37.7900352,
+                longitude: -122.4013726,
             }
         },
         {
@@ -15,6 +19,10 @@ const initialState = {
             name: 'Second Item',
             image: {
                 uri: "https://www.stylecraze.com/wp-content/uploads/2013/06/1752-Top-10-Most-Beautiful-Yellow-Roses-is.jpg"
+            },
+            location: {
+                latitude: 37.7900352,
+                longitude: -122.4013726,
             }
         }
     ],
@@ -22,25 +30,21 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case SET_PLACES:
+            return {
+                ...state,
+                places: action.places
+            };
+        case REMOVE_PLACE:
+            return {
+                ...state,
+                places: state.places.filter(place => {
+                    return place.key !== action.key;
+                })
+            };
         case ADD_PLACE:
             return {
-                ...state,
-                places: state.places.concat({
-                        key: new Date().getTime().toString(),
-                        name: action.placeName,
-                        image: {
-                            uri: "https://www.stylecraze.com/wp-content/uploads/2013/06/1752-Top-10-Most-Beautiful-Yellow-Roses-is.jpg"
-                        },
-                        location: action.location
-                    })
-            };
-        case DELETE_PLACE:
-            return {
-                ...state,
-                places: state.places.filter(el => {
-                    return el.key !== action.payload;
-                }),
-                selectedPlace: null
+                ...state
             };
         default:
             return state;

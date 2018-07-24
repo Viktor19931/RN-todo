@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Animated} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import { connect } from 'react-redux';
+import { getPlaces } from '../../store/actions/index';
 
 import PlaceList from '../../components/PlaceList/PlaceList';
 
@@ -10,15 +11,14 @@ class FindPlaceScreen extends Component {
     };
 
     state = {
-        placeLoaded: true,
-        removeAnim: new Animated.Value(1)
+        placeLoaded: false,
+        removeAnim: new Animated.Value(1),
+        placesAnim: new Animated.Value(0)
     };
 
-    componentWillUnmount() {
-        this.setState({
-
-        });
-    }
+    componentDidMount() {
+        this.props.onLoadPlaces();
+    };
 
     constructor(props) {
         super(props);
@@ -28,7 +28,6 @@ class FindPlaceScreen extends Component {
     onNavigatorEvent = event => {
         if (event.type === "NavBarButtonPress") {
             if (event.id === "sideDrawerToggle") {
-                console.log('here');
                 this.props.navigator.toggleDrawer({
                     side: "left"
                 });
@@ -36,10 +35,32 @@ class FindPlaceScreen extends Component {
         }
     };
 
+    placesLoadedHandler = () => {
+        Animated.timing(this.state.placesAnim, {
+            toValue: 1,
+            duration: 500,
+            useNativeDriver: true
+        }).start();
+    };
+
+    placesSearchHandler = () => {
+        Animated.timing(this.state.removeAnim, {
+            toValue: 0,
+            duration: 500,
+            useNativeDriver: true
+        }).start(() => {
+            this.setState({
+                placesLoaded: true
+            });
+            this.placesLoadedHandler();
+        });
+    };
+
     itemSelectedHandler = key => {
         const selectedPlace = this.props.places.find(place => {
             return place.key === key;
         });
+        console.log(selectedPlace.places);
         this.props.navigator.push({
             screen: "App.PlaceDetailesScreen",
             title: selectedPlace.name,
@@ -47,17 +68,6 @@ class FindPlaceScreen extends Component {
                 selectedPlace: selectedPlace
             }
         });
-    };
-
-    placesSearchHandler = () => {
-        // this.setState({
-        //     placeLoaded: true
-        // });
-        Animated.timing(this.state.removeAnim, {
-            toValue: 0,
-            duration: 500,
-            useNativeDriver: true
-        }).start();
     };
 
     render() {
@@ -83,17 +93,23 @@ class FindPlaceScreen extends Component {
             </Animated.View>
         );
 
-        if (this.state.placeLoaded) {
+        if (this.state.placesLoaded) {
             content = (
-                <PlaceList
-                    places={this.props.places}
-                    onItemSelected={this.itemSelectedHandler}
-                />
+                <Animated.View
+                    style={{
+                        opacity: this.state.placesAnim
+                    }}
+                >
+                    <PlaceList
+                        places={this.props.places}
+                        onItemSelected={this.itemSelectedHandler}
+                    />
+                </Animated.View>
             );
         }
 
         return (
-            <View style={this.state.placeLoaded ? null : styles.buttonContainerStyle}>
+            <View style={this.state.placesLoaded ? null : styles.buttonContainer}>
                 {content}
             </View>
         );
@@ -101,16 +117,10 @@ class FindPlaceScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    buttonContainerStyle: {
+    buttonContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    listContainerStyle: {
-
     },
     searchButton: {
         borderColor: 'orange',
@@ -131,4 +141,10 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(FindPlaceScreen);
+const mapDispatchToProps = dispatch => {
+    return {
+        onLoadPlaces: () => dispatch(getPlaces())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FindPlaceScreen);
