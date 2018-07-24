@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7c3a0bc-d40a-4ab2-a913-8b50ce4b6df1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AsyncImage/AsyngImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListItem/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/ListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PickImage/PickImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PickImage/PickImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlaceList/PlaceList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlaceList/PlaceList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/FindPlace/FindPlace.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/FindPlace/FindPlace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/PlaceDetails/PlaceDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/PlaceDetails/PlaceDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/SharePlace/SharePlace.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/SharePlace/SharePlace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/configureStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/places.js" afterDir="false" />
-    </list>
+    <list default="true" id="f7c3a0bc-d40a-4ab2-a913-8b50ce4b6df1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -75,20 +56,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlaceDetails.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlaceDetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/screens/PlaceDetails/PlaceDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="50" column="48" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
+            <state relative-caret-position="948">
+              <caret line="97" column="31" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyngImage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AsyngImage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/AsyncImage/AsyngImage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="26" column="54" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="54" />
+            <state relative-caret-position="207">
+              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -147,6 +128,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
@@ -482,7 +464,7 @@
       <workItem from="1532250157192" duration="176000" />
       <workItem from="1532437288636" duration="1679000" />
       <workItem from="1532441680059" duration="404000" />
-      <workItem from="1532446849418" duration="4273000" />
+      <workItem from="1532446849418" duration="4514000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1531213528767</created>
@@ -505,25 +487,32 @@
       <option name="project" value="LOCAL" />
       <updated>1532447387848</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added asyncImage component">
+      <created>1532462313317</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1532462313317</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183398000" />
+    <option name="totallyTimeSpent" value="183639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18903892" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18903892" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.44275862" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.44275862" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.36" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
@@ -578,7 +567,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="added google maps" />
     <MESSAGE value="realise app" />
-    <option name="LAST_COMMIT_MESSAGE" value="realise app" />
+    <MESSAGE value="added asyncImage component" />
+    <option name="LAST_COMMIT_MESSAGE" value="added asyncImage component" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -881,20 +871,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AsyncImage/AsyngImage.js">
+    <entry file="file://$PROJECT_DIR$/src/screens/PlaceDetails/PlaceDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="26" column="54" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="948">
+          <caret line="97" column="31" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/PlaceDetails/PlaceDetails.js">
+    <entry file="file://$PROJECT_DIR$/src/components/AsyncImage/AsyngImage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="50" column="48" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
+        <state relative-caret-position="207">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -7,6 +7,7 @@
 /node_modules
 /ios
 /android
+/functions/node_modules
 
 # misc
 .env.local
